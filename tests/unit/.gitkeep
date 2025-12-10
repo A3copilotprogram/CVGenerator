@@ -1,0 +1,9 @@
+# Unit Tests
+
+This directory will contain unit tests for individual functions and modules.
+
+Organize tests by module:
+- `models/` - Tests for data models
+- `controllers/` - Tests for controllers
+- `services/` - Tests for services
+- `utils/` - Tests for utility functions
