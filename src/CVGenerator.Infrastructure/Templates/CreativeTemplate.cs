@@ -25,8 +25,8 @@ public class CreativeTemplate : IDocument
             .Page(page =>
             {
                 page.Size(PageSizes.A4);
-                page.Margin(30);
-                page.DefaultTextStyle(x => x.FontSize(10).FontFamily("Arial"));
+                page.Margin(TemplateConstants.TightMargin);
+                page.DefaultTextStyle(x => x.FontSize(TemplateConstants.StandardFontSize).FontFamily("Arial"));
 
                 page.Header().Element(ComposeHeader);
                 page.Content().Element(ComposeContent);
@@ -84,7 +84,7 @@ public class CreativeTemplate : IDocument
         container.PaddingTop(10).Row(row =>
         {
             // Left Column (Sidebar)
-            row.ConstantItem(180).Background(Colors.Grey.Lighten3)
+            row.ConstantItem(TemplateConstants.SidebarWidth).Background(Colors.Grey.Lighten3)
                 .Padding(15)
                 .Column(leftColumn =>
                 {

@@ -32,8 +32,8 @@ public class CreateCVRequestValidator : AbstractValidator<CreateCVRequest>
             .SetValidator(new CertificationDtoValidator());
 
         RuleFor(x => x.Summary)
-            .MaximumLength(1000)
-            .WithMessage("Summary must not exceed 1000 characters");
+            .MaximumLength(ValidationConstants.MaxSummaryLength)
+            .WithMessage($"Summary must not exceed {ValidationConstants.MaxSummaryLength} characters");
     }
 }
 
@@ -44,12 +44,12 @@ public class PersonalInfoDtoValidator : AbstractValidator<PersonalInfoDto>
         RuleFor(x => x.FirstName)
             .NotEmpty()
             .WithMessage("First name is required")
-            .MaximumLength(50);
+            .MaximumLength(ValidationConstants.MaxNameLength);
 
         RuleFor(x => x.LastName)
             .NotEmpty()
             .WithMessage("Last name is required")
-            .MaximumLength(50);
+            .MaximumLength(ValidationConstants.MaxNameLength);
 
         RuleFor(x => x.Email)
             .NotEmpty()
@@ -58,7 +58,7 @@ public class PersonalInfoDtoValidator : AbstractValidator<PersonalInfoDto>
             .WithMessage("Invalid email format");
 
         RuleFor(x => x.PhoneNumber)
-            .MaximumLength(20)
+            .MaximumLength(ValidationConstants.MaxPhoneLength)
             .When(x => !string.IsNullOrEmpty(x.PhoneNumber));
 
         RuleFor(x => x.LinkedIn)
@@ -91,12 +91,12 @@ public class EducationDtoValidator : AbstractValidator<EducationDto>
         RuleFor(x => x.Degree)
             .NotEmpty()
             .WithMessage("Degree is required")
-            .MaximumLength(100);
+            .MaximumLength(ValidationConstants.MaxDegreeLength);
 
         RuleFor(x => x.Institution)
             .NotEmpty()
             .WithMessage("Institution is required")
-            .MaximumLength(200);
+            .MaximumLength(ValidationConstants.MaxInstitutionLength);
 
         RuleFor(x => x.StartDate)
             .LessThanOrEqualTo(DateTime.Now)
@@ -108,8 +108,8 @@ public class EducationDtoValidator : AbstractValidator<EducationDto>
             .When(x => x.EndDate.HasValue);
 
         RuleFor(x => x.GPA)
-            .InclusiveBetween(0, 4.0)
-            .WithMessage("GPA must be between 0 and 4.0")
+            .InclusiveBetween(ValidationConstants.MinGPA, ValidationConstants.MaxGPA)
+            .WithMessage($"GPA must be between {ValidationConstants.MinGPA} and {ValidationConstants.MaxGPA} (US grading system)")
             .When(x => x.GPA.HasValue);
     }
 }
@@ -121,12 +121,12 @@ public class WorkExperienceDtoValidator : AbstractValidator<WorkExperienceDto>
         RuleFor(x => x.JobTitle)
             .NotEmpty()
             .WithMessage("Job title is required")
-            .MaximumLength(100);
+            .MaximumLength(ValidationConstants.MaxJobTitleLength);
 
         RuleFor(x => x.Company)
             .NotEmpty()
             .WithMessage("Company is required")
-            .MaximumLength(200);
+            .MaximumLength(ValidationConstants.MaxCompanyLength);
 
         RuleFor(x => x.StartDate)
             .LessThanOrEqualTo(DateTime.Now)
@@ -151,7 +151,7 @@ public class SkillDtoValidator : AbstractValidator<SkillDto>
         RuleFor(x => x.Name)
             .NotEmpty()
             .WithMessage("Skill name is required")
-            .MaximumLength(100);
+            .MaximumLength(ValidationConstants.MaxSkillNameLength);
 
         RuleFor(x => x.Level)
             .NotEmpty()
@@ -174,12 +174,12 @@ public class CertificationDtoValidator : AbstractValidator<CertificationDto>
         RuleFor(x => x.Name)
             .NotEmpty()
             .WithMessage("Certification name is required")
-            .MaximumLength(200);
+            .MaximumLength(ValidationConstants.MaxCertificationNameLength);
 
         RuleFor(x => x.Issuer)
             .NotEmpty()
             .WithMessage("Issuer is required")
-            .MaximumLength(200);
+            .MaximumLength(ValidationConstants.MaxIssuerLength);
 
         RuleFor(x => x.IssueDate)
             .LessThanOrEqualTo(DateTime.Now)

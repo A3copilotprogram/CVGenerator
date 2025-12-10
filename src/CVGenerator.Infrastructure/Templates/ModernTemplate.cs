@@ -25,8 +25,8 @@ public class ModernTemplate : IDocument
             .Page(page =>
             {
                 page.Size(PageSizes.A4);
-                page.Margin(40);
-                page.DefaultTextStyle(x => x.FontSize(10).FontFamily("Arial"));
+                page.Margin(TemplateConstants.StandardMargin);
+                page.DefaultTextStyle(x => x.FontSize(TemplateConstants.StandardFontSize).FontFamily("Arial"));
 
                 page.Header().Element(ComposeHeader);
                 page.Content().Element(ComposeContent);
@@ -45,9 +45,9 @@ public class ModernTemplate : IDocument
         {
             // Name
             column.Item().Background(Colors.Blue.Medium)
-                .Padding(20)
+                .Padding(TemplateConstants.HeaderPadding)
                 .Text($"{_cv.PersonalInfo.FirstName} {_cv.PersonalInfo.LastName}")
-                .FontSize(28)
+                .FontSize(TemplateConstants.NameFontSize)
                 .Bold()
                 .FontColor(Colors.White);
 

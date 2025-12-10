@@ -25,8 +25,8 @@ public class ClassicTemplate : IDocument
             .Page(page =>
             {
                 page.Size(PageSizes.A4);
-                page.Margin(50);
-                page.DefaultTextStyle(x => x.FontSize(10).FontFamily("Times New Roman"));
+                page.Margin(50);  // Wider margin for classic formal look
+                page.DefaultTextStyle(x => x.FontSize(TemplateConstants.StandardFontSize).FontFamily("Times New Roman"));
 
                 page.Header().Element(ComposeHeader);
                 page.Content().Element(ComposeContent);
