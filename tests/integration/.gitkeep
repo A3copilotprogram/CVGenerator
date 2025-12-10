@@ -1,0 +1,9 @@
+# Integration Tests
+
+This directory will contain integration tests for testing component interactions.
+
+Test scenarios:
+- API endpoint tests
+- Database integration tests
+- Service integration tests
+- End-to-end workflow tests

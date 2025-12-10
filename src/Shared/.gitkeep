@@ -1,0 +1,9 @@
+# Shared Components
+
+This directory will contain shared layout and navigation components.
+
+Example shared components:
+- `MainLayout.razor` - Main application layout
+- `NavMenu.razor` - Navigation menu
+- `Header.razor` - Application header
+- `Footer.razor` - Application footer

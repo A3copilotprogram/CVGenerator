@@ -1,0 +1,10 @@
+# JavaScript Files
+
+This directory contains JavaScript files for JS interop and client-side functionality.
+
+Typical files:
+- `app.js` or `site.js` - Application JavaScript
+- Interop files for Blazor-JavaScript communication
+- Third-party libraries (if not using CDN)
+
+Blazor can call JavaScript functions using JSRuntime.InvokeAsync from C# code.
