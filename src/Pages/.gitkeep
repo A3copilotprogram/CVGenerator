@@ -1,0 +1,10 @@
+# Blazor Pages
+
+This directory will contain routable Blazor pages with @page directives.
+
+Example pages:
+- `Index.razor` - Home/Dashboard page
+- `CreateCV.razor` - CV creation wizard
+- `EditCV.razor` - Edit existing CV
+- `Templates.razor` - Browse and select templates
+- `Preview.razor` - Preview CV before export

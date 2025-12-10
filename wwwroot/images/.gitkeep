@@ -1,0 +1,11 @@
+# Image Assets
+
+This directory contains image files for the Blazor application.
+
+Place your image files here:
+- Logos and branding
+- Icons and UI graphics
+- Sample avatars
+- Template thumbnails
+
+Reference images in Blazor: `<img src="/images/logo.png" alt="Logo" />`

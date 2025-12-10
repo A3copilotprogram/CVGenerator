@@ -1,9 +1,0 @@
-# CSS Stylesheets
-
-This directory will contain CSS files for styling the CV Generator application.
-
-Place your stylesheet files here:
-- `main.css` - Main application styles
-- `theme.css` - Theme and color scheme definitions
-- `cv-preview.css` - Styles for CV preview and printing
-- `responsive.css` - Responsive design styles

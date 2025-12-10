@@ -1,0 +1,10 @@
+# Blazor Components
+
+This directory will contain reusable Blazor components (.razor files).
+
+Example components:
+- `CVFormComponent.razor` - Form for entering CV data
+- `WorkExperienceCard.razor` - Display work experience entry
+- `EducationCard.razor` - Display education entry
+- `SkillsList.razor` - Display and manage skills
+- `TemplatePreview.razor` - Preview a CV template

@@ -1,9 +1,0 @@
-# JavaScript Files
-
-This directory will contain client-side JavaScript files.
-
-Place your JavaScript files here:
-- `app.js` - Main application JavaScript
-- `form-handler.js` - Form validation and handling
-- `preview.js` - CV preview functionality
-- `export.js` - Export and download features
