@@ -1,0 +1,6 @@
+@CVGenerator.API_HostAddress = http://localhost:5110
+
+GET {{CVGenerator.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
